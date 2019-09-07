@@ -8,36 +8,46 @@ var playGame = false;
 
 // test function for button
 function startFunction() {
-    document.getElementById("testCol").innerHTML = "Shake it Up";
+    $("#testCol").text("Shake it Up");
     console.log("Lookee here!");
 }
 
-// Set the date we're counting down to
-var countDownDate = new Date("Oct 5, 2019 15:37:25").getTime();
+function draw() {
+  $("#testCol").text("First Draw");
+  setInterval(reDraw, 5000);
+}
 
-// Update the count down every 1 second
-var x = setInterval(function() {
+function reDraw() {
+  $("#testCol").text("Second Draw");
+}
+// draw two sets of text
+setInterval(draw, 5000);
 
-  // Get today's date and time
-  var now = new Date().getTime();
-    
-  // Find the distance between now and the count down date
-  var distance = countDownDate - now;
-    
-  // Time calculations for days, hours, minutes and seconds
-//   var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-//   var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-//   var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    
-  // Output the result in an element with id="demo"
-  document.getElementById("demo").innerHTML = "Countdown " + seconds + "s ";
-//   document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-//   + minutes + "m " + seconds + "s ";
-    
-  // If the count down is over, write some text 
-  if (distance < 0) {
-    clearInterval(x);
-    document.getElementById("demo").innerHTML = "EXPIRED";
+
+// change color every 300 ms
+var myVar = setInterval(setColor, 3000);
+ 
+function setColor() {
+  var x = document.body;
+  x.style.backgroundColor = x.style.backgroundColor == "yellow" ? "pink" : "yellow";
+}
+
+// 30 second timer
+
+var secStart = 30;
+var secCounter = setInterval(timer , 1000);
+function timer() {
+  secStart -= 1;
+  if (secStart <= 0) {
+    clearInterval(secCounter);
+    return;
   }
-}, 1000);
+  $("#timer").text(secStart);
+}
+for (var i = 0; i < 5; i++) {
+  timer();
+}
+$("#timer").text(secStart + "_" +secCounter);
+
+
+ 
