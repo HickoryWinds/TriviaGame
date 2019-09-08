@@ -26,12 +26,7 @@
                 <div class="col-3" id="testCol">
                     <button onclick="startFunction()">Start</button>
                 </div>
-                <div class="col-3">
-                    <input type="radio" id="colA" name="answer" value="Column A"> Column A<br>
-                    <input type="radio" id="ColB" name="answer" value="Column B"> Column B<br>
-                    <input type="radio" id="ColC" name="answer" value="Column C"> Column C<br>
-                    <input type="radio" id="ColD" name="answer" value="Column D"> Column D
-                </div>
+                
                 <div class="col-3">
                     Timer:<p id="timer"></p>
                     <br>
@@ -42,66 +37,69 @@
                 </div>
             </div>
             
-            <h2>Form control: inline radio buttons</h2>
-            <p>The form below contains three inline radio buttons. The first option is checked by default, and the last option is disabled:</p>
-            <form action="/action_page.php">
-                <div class="form-check-inline">
-                    <label class="form-check-label" for="radio1">
-                        <input type="radio" onclick="if(this.checked){myOtherFunction()}" class="form-check-input" id="radio1" name="optradio" value="option1" checked>Option 1
-                    </label>
-                </div>
-                <div class="form-check-inline">
-                    <label class="form-check-label" for="radio2">
-                        <input type="radio" onclick="if(this.checked){myOtherFunction()}" class="form-check-input" id="radio2" name="optradio" value="option2">Option 2
-                    </label>
-                </div>
-                <div class="form-check-inline">
-                    <label class="form-check-label">
-                        <input type="radio" onclick="if(this.checked){myOtherFunction()}" class="form-check-input" disabled>Option 3
-                    </label>
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
-            
-            <p>How would you like your coffee?</p>
+            <p>Choose A, B, or C.</p>
 
-            <form action="/action_page.php">
+            <form>
                 <div class="form-check-inline">
-                    <input type="radio" name="coffee" value="cream">With cream<br>
+                    <input type="radio" name="question1" value="incorrect">A<br>
                 </div>
                 <div class="form-check-inline">
-                    <input type="radio" name="coffee" value="sugar">With sugar<br>
+                    <input type="radio" name="question1" value="correct">B<br>
                 </div>
                 <div class="form-check-inline">
-                        <input type="radio" name="coffee" value="cream & sugar">With cream & sugar<br>
+                        <input type="radio" name="question1" value="incorrect">C<br>
                     </div>
               <br>
-              <input type="button" onclick="myFunction()" value="Send order">
+              <input type="button" onclick="answerOne()" value="Click here.">
               <br><br>
-              <input type="text" id="coffee-order" size="50">
+              <input type="text" id="pick-1" size="50">
               <input type="submit" value="Submit">
             </form>
 
-            <p>What kind of sandwich would you like?</p>
-            <form action="/action_page.php">
+            <p>Choose A, B, C, or D.</p>
+            <form>
                 <div class="form-check-inline">
-                    <input type="radio" name="sandwich" value="ham & swiss">ham & swiss<br>
+                    <input type="radio" name="question2" value="incorrect">A<br>
                 </div>
                 <div class="form-check-inline">
-                    <input type="radio" name="sandwich" value="tuna salad">tuna salad<br>
+                    <input type="radio" name="question2" value="incorrect">B<br>
                 </div>
                 <div class="form-check-inline">
-                        <input type="radio" name="sandwich" value="grilled cheese">grilled cheese<br>
+                        <input type="radio" name="question2" value="incorrect">C<br>
                 </div>
                 <div class="form-check-inline">
-                        <input type="radio" name="sandwich" value="salami">salami<br>
+                        <input type="radio" name="question2" value="correct">D<br>
                 </div>
               <br>
-              <input type="button" onclick="myNextFunction()" value="Send order">
+              <input type="button" onclick="answerTwo()" value="Click here.">
               <br><br>
-              <input type="text" id="sandwich-order" size="50">
+              <input type="text" id="pick-2" size="50">
               <input type="submit" value="Submit">
             </form>
+            <br>
+
+            <p>Choose A, B, C, or D.</p>
+            <form>
+                <div class="form-check-inline">
+                    <input type="radio" name="question3" value="incorrect">A<br>
+                </div>
+                <div class="form-check-inline">
+                    <input type="radio" name="question3" value="incorrect">B<br>
+                </div>
+                <div class="form-check-inline">
+                        <input type="radio" name="question3" value="incorrect">C<br>
+                </div>
+                <div class="form-check-inline">
+                        <input type="radio" name="question3" value="correct">D<br>
+                </div>
+              <br>
+              <input type="button" onclick="answerThree()" value="Click here.">
+              <br><br>
+              <input type="text" id="pick-3" size="50">
+              <br>
+              <input type="button" onclick="calcScore()" value="Calculate">
+            </form>
+
         </div>
 
         <script type="text/javascript" src="assets/javascript/app.js"></script>
