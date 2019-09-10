@@ -5,3 +5,15 @@ style the elements
 body {
     background-image: url(gravel.png);
 }
+
+/*-----------------
+style the classes
+-----------------*/
+
+/*-----------------
+style the ids
+-----------------*/
+
+#backing {
+    background-color: aqua;
+}

@@ -32,7 +32,7 @@ function masterTimer( ){
   }
 }
 
-masterTimer();
+// masterTimer();
 
 var answerSummary = [];
 console.log("answerSummary @ start = " + answerSummary)
@@ -122,18 +122,17 @@ function calcScore() {
 
 function startMe() {
   document.getElementById("start").style.display = "none";
-  document.getElementById("Q1").style.display = "block";
-  document.getElementById("Q2").style.display = "block";
-  document.getElementById("Q3").style.display = "block";
+  document.getElementById("Q1").style.visibility = "visible";
+  document.getElementById("Q2").style.visibility = "visible";
+  document.getElementById("Q3").style.visibility = "visible";
   document.getElementById("timer").style.display = "block";
+  masterTimer();
 }
 
 function hideMe() {
   document.getElementById("heresMagic").style.display = "block";
-  document.getElementById("Q1").style.display = "none";
-  document.getElementById("Q2").style.display = "none";
-  document.getElementById("Q3").style.display = "none";
+  document.getElementById("Q1").style.visibility = "hidden";
+  document.getElementById("Q2").style.visibility = "hidden";
+  document.getElementById("Q3").style.visibility = "hidden";
   document.getElementById("timer").style.display = "none";
 }
-
- 
