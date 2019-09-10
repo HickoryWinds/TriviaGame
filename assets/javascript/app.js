@@ -12,67 +12,7 @@ function startFunction() {
     // console.log("Lookee here!");
 }
 
-// function draw() {
-//   $("#testCol").text("First Draw");
-//   setInterval(reDraw, 5000);
-// }
-
-// function reDraw() {
-//   $("#testCol").text("Second Draw");
-// }
-// draw two sets of text
-// setInterval(draw, 5000);
-
-
-// change color every 300 ms
-// var myVar = setInterval(setColor, 3000);
- 
-// function setColor() {
-//   var x = document.body;
-//   x.style.backgroundColor = x.style.backgroundColor == "yellow" ? "pink" : "yellow";
-// }
-
-
-// var myVar = setInterval(myTimer, 1000);
-
-// function myTimer() {
-//   var d = new Date();
-//   var t = d.toLocaleTimeString();
-//   document.getElementById("demo").innerHTML = t;
-// }
-
-// function myStopFunction() {
-//   clearInterval(myVar);
-// }
-
-
-
-// var myTimer = setInterval(masterTimer, 10000);
-
-// // 30 second timer
-// var cnt = 0;
-// function masterTimer( ){
-//   var secStart = 10;
-//   $("#timer").text(secStart + " round " + (cnt + 1));
-//   var secCounter = setInterval(timer , 1000);
-//   function timer() {
-//     secStart -= 1;
-//     if (secStart <= 0) {
-//       secStart = 10;
-//       clearInterval(secCounter);
-//       return;
-//     }
-//     $("#timer").text(secStart + " round " + cnt);
-//   }
-//   cnt += 1;
-//   // console.log(cnt);
-//   if (cnt === 4) {
-//     secStart = 0;
-//     // console.log(cnt);
-//     $("#timer").text("0 " + " round " + cnt);
-//     clearInterval(myTimer);
-//   }
-// }
+// define here so calcScore work when time runs out and with button
 var secCounter;
 // 30 second timer
 var cnt = 0;
@@ -90,14 +30,6 @@ function masterTimer( ){
     }
     document.getElementById("timer").innerHTML = (secStart + " seconds left");
   }
-  // cnt += 1;
-  // console.log(cnt);
-  // if (cnt === 4) {
-  //   secStart = 0;
-  //   // console.log(cnt);
-  //   $("#timer").text("0 " + " round " + cnt);
-  //   clearInterval(myTimer);
-  // }
 }
 
 masterTimer();
@@ -152,8 +84,11 @@ function answerThree() {
 
 function calcScore() {
   secStart = 0;
+  numberCorrect = 0;
+  numberInCorrect = 0;
+  numberNoAnswer = 0;
   clearInterval(secCounter);
-  document.getElementById("timer").innerHTML = ("0 seconds left");
+  // document.getElementById("timer").innerHTML = ("0 seconds left");
   console.log("end " + secStart);
   answerOne();
   answerTwo();
@@ -171,14 +106,34 @@ function calcScore() {
     }
     numberNoAnswer = 3 - (numberCorrect + numberInCorrect);
   }
-  // window.location.href = "score_page.html";
   console.log(numberCorrect);
   document.getElementById("right").innerHTML = numberCorrect;
   console.log(numberInCorrect);
   document.getElementById("wrong").innerHTML = numberInCorrect;
   console.log(numberNoAnswer);
   document.getElementById("none").innerHTML = numberNoAnswer;
+  hideMe();
+  // window.location.href = "score_page.html";
+    // document.getElementById("rightScore").innerHTML = numberCorrect;
+    // document.getElementById("wrongScore").innerHTML =  numberInCorrect;
+    // document.getElementById("noneScore").innerHTML =  numberNoAnswer;
   
   }
+
+function startMe() {
+  document.getElementById("start").style.display = "none";
+  document.getElementById("Q1").style.display = "block";
+  document.getElementById("Q2").style.display = "block";
+  document.getElementById("Q3").style.display = "block";
+  document.getElementById("timer").style.display = "block";
+}
+
+function hideMe() {
+  document.getElementById("heresMagic").style.display = "block";
+  document.getElementById("Q1").style.display = "none";
+  document.getElementById("Q2").style.display = "none";
+  document.getElementById("Q3").style.display = "none";
+  document.getElementById("timer").style.display = "none";
+}
 
  
