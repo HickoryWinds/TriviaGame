@@ -27,209 +27,186 @@
 
             <div class="col-6" id="backing" style="text-align: center;">
 
-                <h3>Trivia Time</h3>
-                <div id="heresMagic" style="display: none">
+                <h3>Music Theory Knowledge Quiz</h3>
+                <div id="heresMagic" style="display: none; font-weight: bold;">
                     <p>You got <span id="right">0</span> correct.</p><br>
                     <p>You got <span id="wrong">0</span> incorrect.</p><br>
                     <p>You did not answer <span id="none">0</span> question(s).</p>
                 </div>
+                <br>
+                <div id="end-image" style="display: none;">
+                    <img id="end-pic" src="assets/images/kid-singing.jpg">
+                </div>
 
                 <div id="start">
                     <input type="button" onclick="startMe()" value="Start">
+                </div>
+                <br>
+                <div id="start-image" style="display: block;">
+                    <img id="start-pic" src="assets/images/music-glasses.jpg">
                 </div>
 
                 <div id="timerDiv" style="visibility: hidden;">
                     <p>Seconds Left: <span id="timer">60</span></p>
                 </div>
 
-                <div id="Q1" style="visibility: hidden;">
-                    <p>Choose A, B, or C.</p>
-
+                <div id="Q1" style="display: none;">
+                    <p class="question">What major key has 2 flats?</p>
                     <form>
                         <div class="form-check-inline">
                             <input type="radio" name="question1" value="incorrect">A<br>
                         </div>
                         <div class="form-check-inline">
-                            <input type="radio" name="question1" value="correct">B<br>
+                            <input type="radio" name="question1" value="correct">B flat<br>
                         </div>
                         <div class="form-check-inline">
                             <input type="radio" name="question1" value="incorrect">C<br>
                         </div>
+                        <div class="form-check-inline">
+                            <input type="radio" name="question1" value="incorrect">D flat<br>
+                        </div>
+                        </form>
                         <br>
-                        <!-- <input type="button" onclick="answerOne()" value="Click here.">
-                        <br><br> -->
-                        <!-- <input type="text" id="pick-1" size="50"> -->
-                        <!-- <input type="submit" value="Submit"> -->
-                    </form>
 
                 </div>
 
-                <div id="Q2" style="visibility: hidden;">
-                    <p>Choose A, B, C, or D.</p>
+                <div id="Q2" style="display: none;">
+                    <p class="question">What minor key has 2 flats?</p>
                     <form>
                         <div class="form-check-inline">
-                            <input type="radio" name="question2" value="incorrect">A<br>
+                            <input type="radio" name="question2" value="incorrect">D<br>
                         </div>
                         <div class="form-check-inline">
-                            <input type="radio" name="question2" value="incorrect">B<br>
+                            <input type="radio" name="question2" value="incorrect">E<br>
                         </div>
                         <div class="form-check-inline">
                             <input type="radio" name="question2" value="incorrect">C<br>
                         </div>
                         <div class="form-check-inline">
-                            <input type="radio" name="question2" value="correct">D<br>
+                            <input type="radio" name="question2" value="correct">G<br>
                         </div>
-                        <br>
-                        <!-- <input type="button" onclick="answerTwo()" value="Click here.">
-                        <br><br>
-                        <input type="text" id="pick-2" size="50">
-                        <input type="submit" value="Submit"> -->
                     </form>
                     <br>
                 </div>
 
-                <div id="Q3" style="visibility: hidden;">
+                <div id="Q3" style="display: none;">
 
-                    <p>Choose A, B, C, or D.</p>
+                    <p class="question">The number of sharps in a key can described using: </p>
                     <form>
                         <div class="form-check-inline">
-                            <input type="radio" name="question3" value="incorrect">A<br>
+                            <input type="radio" name="question3" value="incorrect">circle of thirds<br>
                         </div>
                         <div class="form-check-inline">
-                            <input type="radio" name="question3" value="incorrect">B<br>
+                            <input type="radio" name="question3" value="incorrect">circle of life<br>
                         </div>
                         <div class="form-check-inline">
-                            <input type="radio" name="question3" value="incorrect">C<br>
+                            <input type="radio" name="question3" value="incorrect">circle of fourths<br>
                         </div>
                         <div class="form-check-inline">
-                            <input type="radio" name="question3" value="correct">D<br>
+                            <input type="radio" name="question3" value="correct">circle of fifths<br>
                         </div>
+                        </form>
                         <br>
-                        <!-- <input type="button" onclick="answerThree()" value="Click here.">
-                        <br><br>
-                        <input type="text" id="pick-3" size="50">
-                        <br> -->
-                    </form>
                 </div>
 
                 <div id="Q4" style="display: none;">
 
-                    <p>Choose A, B, C, or D.</p>
+                    <p class="question">In a 6/8 time signature, which note gets one count?</p>
                     <form>
                         <div class="form-check-inline">
-                            <input type="radio" name="question4" value="incorrect">A<br>
+                            <input type="radio" name="question4" value="incorrect">quarter note<br>
                         </div>
                         <div class="form-check-inline">
-                            <input type="radio" name="question4" value="incorrect">B<br>
+                            <input type="radio" name="question4" value="correct">eighth note<br>
                         </div>
                         <div class="form-check-inline">
-                            <input type="radio" name="question4" value="incorrect">C<br>
+                            <input type="radio" name="question4" value="incorrect">sixteenth note<br>
                         </div>
                         <div class="form-check-inline">
-                            <input type="radio" name="question4" value="correct">D<br>
+                            <input type="radio" name="question4" value="incorrect">half note<br>
                         </div>
+                        </form>
                         <br>
-                        <!-- <input type="button" onclick="answerThree()" value="Click here.">
-                        <br><br>
-                        <input type="text" id="pick-4" size="50">
-                        <br> -->
-                    </form>
                 </div>
 
                 <div id="Q5" style="display: none;">
 
-                    <p>Choose A, B, C, or D.</p>
+                    <p class="question">A major key uses which mode?</p>
                     <form>
                         <div class="form-check-inline">
-                            <input type="radio" name="question5" value="incorrect">A<br>
+                            <input type="radio" name="question5" value="incorrect">Aeolian<br>
                         </div>
                         <div class="form-check-inline">
-                            <input type="radio" name="question5" value="incorrect">B<br>
+                            <input type="radio" name="question5" value="incorrect">Dorian<br>
                         </div>
                         <div class="form-check-inline">
-                            <input type="radio" name="question5" value="incorrect">C<br>
+                            <input type="radio" name="question5" value="correct">Ionian<br>
                         </div>
                         <div class="form-check-inline">
-                            <input type="radio" name="question5" value="correct">D<br>
+                            <input type="radio" name="question5" value="incorrect">Mixolydian<br>
                         </div>
+                        </form>
                         <br>
-                        <!-- <input type="button" onclick="answerThree()" value="Click here.">
-                        <br><br>
-                        <input type="text" id="pick-5" size="50">
-                        <br> -->
-                    </form>
                 </div>
 
                 <div id="Q6" style="display: none;">
 
-                    <p>Choose A, B, C, or D.</p>
+                    <p class="question">A minor key uses which mode?</p>
                     <form>
                         <div class="form-check-inline">
-                            <input type="radio" name="question6" value="incorrect">A<br>
+                            <input type="radio" name="question6" value="correct">Aeolian<br>
                         </div>
                         <div class="form-check-inline">
-                            <input type="radio" name="question6" value="incorrect">B<br>
+                            <input type="radio" name="question6" value="incorrect">Dorian<br>
                         </div>
                         <div class="form-check-inline">
-                            <input type="radio" name="question6" value="incorrect">C<br>
+                            <input type="radio" name="question6" value="incorrect">Ionian<br>
                         </div>
                         <div class="form-check-inline">
-                            <input type="radio" name="question6" value="correct">D<br>
+                            <input type="radio" name="question6" value="incorrect">Mixolydian<br>
                         </div>
+                        </form>
                         <br>
-                        <!-- <input type="button" onclick="answerThree()" value="Click here.">
-                        <br><br>
-                        <input type="text" id="pick-6" size="50">
-                        <br> -->
-                    </form>
                 </div>
 
                 <div id="Q7" style="display: none;">
 
-                    <p>Choose A, B, C, or D.</p>
+                    <p class="question">Which of the following is a fast tempo?</p>
                     <form>
                         <div class="form-check-inline">
-                            <input type="radio" name="question7" value="incorrect">A<br>
+                            <input type="radio" name="question7" value="correct">Allegro<br>
                         </div>
                         <div class="form-check-inline">
-                            <input type="radio" name="question7" value="incorrect">B<br>
+                            <input type="radio" name="question7" value="incorrect">Largo<br>
                         </div>
                         <div class="form-check-inline">
-                            <input type="radio" name="question7" value="incorrect">C<br>
+                            <input type="radio" name="question7" value="incorrect">Andante<br>
                         </div>
                         <div class="form-check-inline">
-                            <input type="radio" name="question7" value="correct">D<br>
+                            <input type="radio" name="question7" value="incorrect">Moderato<br>
                         </div>
+                        </form>
                         <br>
-                        <!-- <input type="button" onclick="answerThree()" value="Click here.">
-                        <br><br>
-                        <input type="text" id="pick-7" size="50">
-                        <br> -->
-                    </form>
                 </div>
 
                 <div id="Q8" style="display: none;">
 
-                    <p>Choose A, B, C, or D.</p>
+                    <p class="question">Which of the following is a slow tempo?</p>
                     <form>
                         <div class="form-check-inline">
-                            <input type="radio" name="question8" value="incorrect">A<br>
+                            <input type="radio" name="question8" value="incorrect">Allegro<br>
                         </div>
                         <div class="form-check-inline">
-                            <input type="radio" name="question8" value="incorrect">B<br>
+                            <input type="radio" name="question8" value="correct">Largo<br>
                         </div>
                         <div class="form-check-inline">
-                            <input type="radio" name="question8" value="incorrect">C<br>
+                            <input type="radio" name="question8" value="incorrect">Allegretto<br>
                         </div>
                         <div class="form-check-inline">
-                            <input type="radio" name="question8" value="correct">D<br>
+                            <input type="radio" name="question8" value="incorrect">Moderato<br>
                         </div>
+                        </form>
                         <br>
-                        <!-- <input type="button" onclick="answerThree()" value="Click here.">
-                        <br><br>
-                        <input type="text" id="pick-8" size="50"> -->
-                        <br>
-                    </form>
                 </div>
 
                 <div id="calc" style="visibility: hidden;">

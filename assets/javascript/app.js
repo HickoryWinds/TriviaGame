@@ -192,9 +192,9 @@ function calcScore() {
 
 function startMe() {
   document.getElementById("start").style.display = "none";
-  document.getElementById("Q1").style.visibility = "visible";
-  document.getElementById("Q2").style.visibility = "visible";
-  document.getElementById("Q3").style.visibility = "visible";
+  document.getElementById("Q1").style.display = "block";
+  document.getElementById("Q2").style.display = "block";
+  document.getElementById("Q3").style.display = "block";
   document.getElementById("Q4").style.display = "block";
   document.getElementById("Q5").style.display = "block";
   document.getElementById("Q6").style.display = "block";
@@ -202,14 +202,16 @@ function startMe() {
   document.getElementById("Q8").style.display = "block";
   document.getElementById("timerDiv").style.visibility = "visible";
   document.getElementById("calc").style.visibility = "visible";
+  document.getElementById("start-image").style.display = "none";
+  // document.getElementById("end-image").style.visibility = "visible";
   masterTimer();
 }
 
 function hideMe() {
   document.getElementById("heresMagic").style.display = "block";
-  document.getElementById("Q1").style.visibility = "hidden";
-  document.getElementById("Q2").style.visibility = "hidden";
-  document.getElementById("Q3").style.visibility = "hidden";
+  document.getElementById("Q1").style.display = "none";
+  document.getElementById("Q2").style.display = "none";
+  document.getElementById("Q3").style.display = "none";
   document.getElementById("Q4").style.display = "none";
   document.getElementById("Q5").style.display = "none";
   document.getElementById("Q6").style.display = "none";
@@ -217,4 +219,6 @@ function hideMe() {
   document.getElementById("Q8").style.display = "none";
   document.getElementById("timerDiv").style.visibility = "hidden";
   document.getElementById("calc").style.visibility = "hidden";
+  // document.getElementById("start-image").style.visibility = "hidden";
+  document.getElementById("end-image").style.display = "block";
 }

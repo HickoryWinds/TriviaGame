@@ -3,12 +3,16 @@ style the elements
 -----------------*/
 
 body {
-    background-image: url(gravel.png);
+    background-image: url(music-violin.jpg);
 }
 
 /*-----------------
 style the classes
 -----------------*/
+.question {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 16pt;
+}
 
 /*-----------------
 style the ids
@@ -16,4 +20,17 @@ style the ids
 
 #backing {
     background-color: aqua;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14pt;
+}
+
+
+#end-pic {
+    height: 346px;
+    width: 518px;
+}
+
+#start-pic {
+    height: 346px;
+    width: 518px;
 }
