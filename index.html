@@ -26,33 +26,40 @@
 
 
             <div class="col-6" id="backing" style="text-align: center;">
-
-                <h3>Music Theory Knowledge Quiz</h3>
-                <div id="heresMagic" style="display: none; font-weight: bold;">
-                    <p>You got <span id="right">0</span> correct.</p><br>
-                    <p>You got <span id="wrong">0</span> incorrect.</p><br>
+                <div id="banner">
+                    <br>
+                    <h3>Music Theory Knowledge Quiz</h3>
+                    <br>
+                </div>
+                <div id="heresMagic" class="answer" style="display: none; font-weight: bold;">
+                    <br>
+                    <p>You got <span id="right">0</span> correct.</p>
+                    <p>You got <span id="wrong">0</span> incorrect.</p>
                     <p>You did not answer <span id="none">0</span> question(s).</p>
                 </div>
-                <br>
                 <div id="end-image" style="display: none;">
+                    <br>
                     <img id="end-pic" src="assets/images/kid-singing.jpg">
                 </div>
 
                 <div id="start">
-                    <input type="button" onclick="startMe()" value="Start">
+                    <br>
+                    <input type="button" class="btn" onclick="startMe()" value="Start">
                 </div>
                 <br>
                 <div id="start-image" style="display: block;">
                     <img id="start-pic" src="assets/images/music-glasses.jpg">
                 </div>
 
-                <div id="timerDiv" style="visibility: hidden;">
+                <div id="timerDiv" style="display: none;">
+                    <br>
                     <p>Seconds Left: <span id="timer">60</span></p>
                 </div>
+                <br>
 
                 <div id="Q1" style="display: none;">
                     <p class="question">What major key has 2 flats?</p>
-                    <form>
+                    <form class="answer">
                         <div class="form-check-inline">
                             <input type="radio" name="question1" value="incorrect">A<br>
                         </div>
@@ -72,7 +79,7 @@
 
                 <div id="Q2" style="display: none;">
                     <p class="question">What minor key has 2 flats?</p>
-                    <form>
+                    <form class="answer">
                         <div class="form-check-inline">
                             <input type="radio" name="question2" value="incorrect">D<br>
                         </div>
@@ -92,7 +99,7 @@
                 <div id="Q3" style="display: none;">
 
                     <p class="question">The number of sharps in a key can described using: </p>
-                    <form>
+                    <form class="answer">
                         <div class="form-check-inline">
                             <input type="radio" name="question3" value="incorrect">circle of thirds<br>
                         </div>
@@ -112,7 +119,7 @@
                 <div id="Q4" style="display: none;">
 
                     <p class="question">In a 6/8 time signature, which note gets one count?</p>
-                    <form>
+                    <form class="answer">
                         <div class="form-check-inline">
                             <input type="radio" name="question4" value="incorrect">quarter note<br>
                         </div>
@@ -132,7 +139,7 @@
                 <div id="Q5" style="display: none;">
 
                     <p class="question">A major key uses which mode?</p>
-                    <form>
+                    <form class="answer">
                         <div class="form-check-inline">
                             <input type="radio" name="question5" value="incorrect">Aeolian<br>
                         </div>
@@ -152,7 +159,7 @@
                 <div id="Q6" style="display: none;">
 
                     <p class="question">A minor key uses which mode?</p>
-                    <form>
+                    <form class="answer">
                         <div class="form-check-inline">
                             <input type="radio" name="question6" value="correct">Aeolian<br>
                         </div>
@@ -172,7 +179,7 @@
                 <div id="Q7" style="display: none;">
 
                     <p class="question">Which of the following is a fast tempo?</p>
-                    <form>
+                    <form class="answer">
                         <div class="form-check-inline">
                             <input type="radio" name="question7" value="correct">Allegro<br>
                         </div>
@@ -192,7 +199,7 @@
                 <div id="Q8" style="display: none;">
 
                     <p class="question">Which of the following is a slow tempo?</p>
-                    <form>
+                    <form class="answer">
                         <div class="form-check-inline">
                             <input type="radio" name="question8" value="incorrect">Allegro<br>
                         </div>
@@ -209,8 +216,8 @@
                         <br>
                 </div>
 
-                <div id="calc" style="visibility: hidden;">
-                    <input type="button" onclick="calcScore()" value="Done">
+                <div id="calc" style="display: none;">
+                    <input type="button" class="btn" onclick="calcScore()" value="Done">
                     <br><br>
                 </div>
 

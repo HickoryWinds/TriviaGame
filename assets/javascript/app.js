@@ -200,8 +200,8 @@ function startMe() {
   document.getElementById("Q6").style.display = "block";
   document.getElementById("Q7").style.display = "block";
   document.getElementById("Q8").style.display = "block";
-  document.getElementById("timerDiv").style.visibility = "visible";
-  document.getElementById("calc").style.visibility = "visible";
+  document.getElementById("timerDiv").style.display = "block";
+  document.getElementById("calc").style.display = "block";
   document.getElementById("start-image").style.display = "none";
   // document.getElementById("end-image").style.visibility = "visible";
   masterTimer();
@@ -217,8 +217,8 @@ function hideMe() {
   document.getElementById("Q6").style.display = "none";
   document.getElementById("Q7").style.display = "none";
   document.getElementById("Q8").style.display = "none";
-  document.getElementById("timerDiv").style.visibility = "hidden";
-  document.getElementById("calc").style.visibility = "hidden";
+  document.getElementById("timerDiv").style.display = "none";
+  document.getElementById("calc").style.display = "none";
   // document.getElementById("start-image").style.visibility = "hidden";
   document.getElementById("end-image").style.display = "block";
 }
