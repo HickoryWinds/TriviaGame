@@ -18,7 +18,7 @@ var secCounter;
 var cnt = 0;
 var secStart = 0;
 function masterTimer( ){
-  secStart = 10;
+  secStart = 60;
   secCounter = setInterval(timer , 1000);
   function timer() {
     secStart -= 1;
@@ -28,12 +28,11 @@ function masterTimer( ){
       calcScore();
       // return;
     }
-    document.getElementById("timer").innerHTML = (secStart + " seconds left");
+    document.getElementById("timer").innerHTML = (secStart);
   }
 }
 
-// masterTimer();
-
+var number_questions = 8;
 var answerSummary = [];
 console.log("answerSummary @ start = " + answerSummary)
 var numberCorrect = 0;
@@ -51,7 +50,7 @@ function answerOne() {
       console.log(" answerSummary add 1 = " + answerSummary);
     }
   }
-  document.getElementById("pick-1").value = "Your answer to question one is " + txt;
+  // document.getElementById("pick-1").value = "Your answer to question one is " + txt;
 }
 
 function answerTwo() {
@@ -65,7 +64,7 @@ function answerTwo() {
       console.log(" answerSummary add 2 = " + answerSummary);
     }
   }
-  document.getElementById("pick-2").value = "Your answer to question two is " + txt;
+  // document.getElementById("pick-2").value = "Your answer to question two is " + txt;
 }
 
 function answerThree() {
@@ -79,7 +78,72 @@ function answerThree() {
       console.log(" answerSummary add 3 = " + answerSummary);
     }
   }
-  document.getElementById("pick-3").value = "Your answer to question three is " + txt;
+  // document.getElementById("pick-3").value = "Your answer to question three is " + txt;
+}
+function answerFour() {
+  var question4 = document.forms[3];
+  var txt = "";
+  var k;
+  for (k = 0; k < question4.length; k++) {
+    if (question4[k].checked) {
+      txt = txt + question4[k].value + " ";
+      answerSummary.push(txt);
+      console.log(" answerSummary add 4 = " + answerSummary);
+    }
+  }
+  // document.getElementById("pick-4").value = "Your answer to question three is " + txt;
+}
+function answerFive() {
+  var question5 = document.forms[4];
+  var txt = "";
+  var k;
+  for (k = 0; k < question5.length; k++) {
+    if (question5[k].checked) {
+      txt = txt + question5[k].value + " ";
+      answerSummary.push(txt);
+      console.log(" answerSummary add 5 = " + answerSummary);
+    }
+  }
+  // document.getElementById("pick-5").value = "Your answer to question three is " + txt;
+}
+function answerSix() {
+  var question6 = document.forms[5];
+  var txt = "";
+  var k;
+  for (k = 0; k < question6.length; k++) {
+    if (question6[k].checked) {
+      txt = txt + question6[k].value + " ";
+      answerSummary.push(txt);
+      console.log(" answerSummary add 6 = " + answerSummary);
+    }
+  }
+  // document.getElementById("pick-6").value = "Your answer to question three is " + txt;
+}
+function answerSeven() {
+  var question7 = document.forms[6];
+  var txt = "";
+  var k;
+  for (k = 0; k < question7.length; k++) {
+    if (question7[k].checked) {
+      txt = txt + question7[k].value + " ";
+      answerSummary.push(txt);
+      console.log(" answerSummary add 7 = " + answerSummary);
+    }
+  }
+  // document.getElementById("pick-7").value = "Your answer to question three is " + txt;
+}
+function answerEight() {
+  var question8 = document.forms[7];
+  var txt = "";
+  var k;
+  for (k = 0; k < question8.length; k++) {
+    if (question8[k].checked) {
+      txt = txt + question8[k].value + " ";
+      answerSummary.push(txt);
+      console.log(" answerSummary add 8 = " + answerSummary);
+    }
+  }
+  // document.getElementById("pick-8").value = "Your answer to question three is " + txt;
 }
 
 function calcScore() {
@@ -93,6 +157,11 @@ function calcScore() {
   answerOne();
   answerTwo();
   answerThree();
+  answerFour();
+  answerFive();
+  answerSix();
+  answerSeven();
+  answerEight();
   if (answerSummary.length === 0) {
     answerSummary = ["a"];
   }
@@ -104,7 +173,7 @@ function calcScore() {
     if (answerSummary[l] === "incorrect ") {
       numberInCorrect += 1;
     }
-    numberNoAnswer = 3 - (numberCorrect + numberInCorrect);
+    numberNoAnswer = (number_questions) - (numberCorrect + numberInCorrect);
   }
   console.log(numberCorrect);
   document.getElementById("right").innerHTML = numberCorrect;
@@ -112,6 +181,7 @@ function calcScore() {
   document.getElementById("wrong").innerHTML = numberInCorrect;
   console.log(numberNoAnswer);
   document.getElementById("none").innerHTML = numberNoAnswer;
+ 
   hideMe();
   // window.location.href = "score_page.html";
     // document.getElementById("rightScore").innerHTML = numberCorrect;
@@ -125,7 +195,13 @@ function startMe() {
   document.getElementById("Q1").style.visibility = "visible";
   document.getElementById("Q2").style.visibility = "visible";
   document.getElementById("Q3").style.visibility = "visible";
-  document.getElementById("timer").style.display = "block";
+  document.getElementById("Q4").style.display = "block";
+  document.getElementById("Q5").style.display = "block";
+  document.getElementById("Q6").style.display = "block";
+  document.getElementById("Q7").style.display = "block";
+  document.getElementById("Q8").style.display = "block";
+  document.getElementById("timerDiv").style.visibility = "visible";
+  document.getElementById("calc").style.visibility = "visible";
   masterTimer();
 }
 
@@ -134,5 +210,11 @@ function hideMe() {
   document.getElementById("Q1").style.visibility = "hidden";
   document.getElementById("Q2").style.visibility = "hidden";
   document.getElementById("Q3").style.visibility = "hidden";
-  document.getElementById("timer").style.display = "none";
+  document.getElementById("Q4").style.display = "none";
+  document.getElementById("Q5").style.display = "none";
+  document.getElementById("Q6").style.display = "none";
+  document.getElementById("Q7").style.display = "none";
+  document.getElementById("Q8").style.display = "none";
+  document.getElementById("timerDiv").style.visibility = "hidden";
+  document.getElementById("calc").style.visibility = "hidden";
 }

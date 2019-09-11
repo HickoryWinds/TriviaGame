@@ -25,7 +25,7 @@
             <div class="col-3"></div>
 
 
-            <div class="col-6" id="backing">
+            <div class="col-6" id="backing" style="text-align: center;">
 
                 <h3>Trivia Time</h3>
                 <div id="heresMagic" style="display: none">
@@ -35,13 +35,11 @@
                 </div>
 
                 <div id="start">
-                    <input type="button" onclick="startMe()" value="Magic">
+                    <input type="button" onclick="startMe()" value="Start">
                 </div>
 
-                <div class="row">
-                    <div id="timer" style="display: none">
-                        <!-- Timer:</p> -->
-                    </div>
+                <div id="timerDiv" style="visibility: hidden;">
+                    <p>Seconds Left: <span id="timer">60</span></p>
                 </div>
 
                 <div id="Q1" style="visibility: hidden;">
@@ -58,10 +56,10 @@
                             <input type="radio" name="question1" value="incorrect">C<br>
                         </div>
                         <br>
-                        <input type="button" onclick="answerOne()" value="Click here.">
-                        <br><br>
-                        <input type="text" id="pick-1" size="50">
-                        <input type="submit" value="Submit">
+                        <!-- <input type="button" onclick="answerOne()" value="Click here.">
+                        <br><br> -->
+                        <!-- <input type="text" id="pick-1" size="50"> -->
+                        <!-- <input type="submit" value="Submit"> -->
                     </form>
 
                 </div>
@@ -82,10 +80,10 @@
                             <input type="radio" name="question2" value="correct">D<br>
                         </div>
                         <br>
-                        <input type="button" onclick="answerTwo()" value="Click here.">
+                        <!-- <input type="button" onclick="answerTwo()" value="Click here.">
                         <br><br>
                         <input type="text" id="pick-2" size="50">
-                        <input type="submit" value="Submit">
+                        <input type="submit" value="Submit"> -->
                     </form>
                     <br>
                 </div>
@@ -107,15 +105,136 @@
                             <input type="radio" name="question3" value="correct">D<br>
                         </div>
                         <br>
-                        <input type="button" onclick="answerThree()" value="Click here.">
+                        <!-- <input type="button" onclick="answerThree()" value="Click here.">
                         <br><br>
                         <input type="text" id="pick-3" size="50">
+                        <br> -->
+                    </form>
+                </div>
+
+                <div id="Q4" style="display: none;">
+
+                    <p>Choose A, B, C, or D.</p>
+                    <form>
+                        <div class="form-check-inline">
+                            <input type="radio" name="question4" value="incorrect">A<br>
+                        </div>
+                        <div class="form-check-inline">
+                            <input type="radio" name="question4" value="incorrect">B<br>
+                        </div>
+                        <div class="form-check-inline">
+                            <input type="radio" name="question4" value="incorrect">C<br>
+                        </div>
+                        <div class="form-check-inline">
+                            <input type="radio" name="question4" value="correct">D<br>
+                        </div>
+                        <br>
+                        <!-- <input type="button" onclick="answerThree()" value="Click here.">
+                        <br><br>
+                        <input type="text" id="pick-4" size="50">
+                        <br> -->
+                    </form>
+                </div>
+
+                <div id="Q5" style="display: none;">
+
+                    <p>Choose A, B, C, or D.</p>
+                    <form>
+                        <div class="form-check-inline">
+                            <input type="radio" name="question5" value="incorrect">A<br>
+                        </div>
+                        <div class="form-check-inline">
+                            <input type="radio" name="question5" value="incorrect">B<br>
+                        </div>
+                        <div class="form-check-inline">
+                            <input type="radio" name="question5" value="incorrect">C<br>
+                        </div>
+                        <div class="form-check-inline">
+                            <input type="radio" name="question5" value="correct">D<br>
+                        </div>
+                        <br>
+                        <!-- <input type="button" onclick="answerThree()" value="Click here.">
+                        <br><br>
+                        <input type="text" id="pick-5" size="50">
+                        <br> -->
+                    </form>
+                </div>
+
+                <div id="Q6" style="display: none;">
+
+                    <p>Choose A, B, C, or D.</p>
+                    <form>
+                        <div class="form-check-inline">
+                            <input type="radio" name="question6" value="incorrect">A<br>
+                        </div>
+                        <div class="form-check-inline">
+                            <input type="radio" name="question6" value="incorrect">B<br>
+                        </div>
+                        <div class="form-check-inline">
+                            <input type="radio" name="question6" value="incorrect">C<br>
+                        </div>
+                        <div class="form-check-inline">
+                            <input type="radio" name="question6" value="correct">D<br>
+                        </div>
+                        <br>
+                        <!-- <input type="button" onclick="answerThree()" value="Click here.">
+                        <br><br>
+                        <input type="text" id="pick-6" size="50">
+                        <br> -->
+                    </form>
+                </div>
+
+                <div id="Q7" style="display: none;">
+
+                    <p>Choose A, B, C, or D.</p>
+                    <form>
+                        <div class="form-check-inline">
+                            <input type="radio" name="question7" value="incorrect">A<br>
+                        </div>
+                        <div class="form-check-inline">
+                            <input type="radio" name="question7" value="incorrect">B<br>
+                        </div>
+                        <div class="form-check-inline">
+                            <input type="radio" name="question7" value="incorrect">C<br>
+                        </div>
+                        <div class="form-check-inline">
+                            <input type="radio" name="question7" value="correct">D<br>
+                        </div>
+                        <br>
+                        <!-- <input type="button" onclick="answerThree()" value="Click here.">
+                        <br><br>
+                        <input type="text" id="pick-7" size="50">
+                        <br> -->
+                    </form>
+                </div>
+
+                <div id="Q8" style="display: none;">
+
+                    <p>Choose A, B, C, or D.</p>
+                    <form>
+                        <div class="form-check-inline">
+                            <input type="radio" name="question8" value="incorrect">A<br>
+                        </div>
+                        <div class="form-check-inline">
+                            <input type="radio" name="question8" value="incorrect">B<br>
+                        </div>
+                        <div class="form-check-inline">
+                            <input type="radio" name="question8" value="incorrect">C<br>
+                        </div>
+                        <div class="form-check-inline">
+                            <input type="radio" name="question8" value="correct">D<br>
+                        </div>
+                        <br>
+                        <!-- <input type="button" onclick="answerThree()" value="Click here.">
+                        <br><br>
+                        <input type="text" id="pick-8" size="50"> -->
                         <br>
                     </form>
                 </div>
 
-                <div id="calc" style="display: none">
+                <div id="calc" style="visibility: hidden;">
                     <input type="button" onclick="calcScore()" value="Done">
+                    <br><br>
                 </div>
 
             </div>
