@@ -2,7 +2,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title> Trivia Game</title>
+    <title>Music Theory Quiz</title>
     <!-- set to make viewable on all devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Meyer css reset -->
@@ -21,16 +21,26 @@
 
 <body>
     <div class="container-fluid">
+
+        <!-- only one row needed -->
         <div class="row">
-            <div class="col-3"></div>
 
+            <!-- left column -->
+            <div class="col-sm-3"></div>
 
-            <div class="col-6" id="backing" style="text-align: center;">
+            <!-- center column for all content -->
+            <!-- different 'pages' are shown by hiding and showing div elements -->
+            <!-- using css display settings 'block' and 'none' -->
+            <div class="col-sm-6" id="backing" style="text-align: center;">
+                
+                <!-- banner for all pages -->
                 <div id="banner">
                     <br>
                     <h3>Music Theory Knowledge Quiz</h3>
                     <br>
                 </div>
+
+                <!-- answer summary and image on last 'page' -->
                 <div id="heresMagic" class="answer" style="display: none; font-weight: bold;">
                     <br>
                     <p>You got <span id="right">0</span> correct.</p>
@@ -42,6 +52,7 @@
                     <img id="end-pic" src="assets/images/kid-singing.jpg">
                 </div>
 
+                <!-- start button and image for first 'page' -->
                 <div id="start">
                     <br>
                     <input type="button" class="btn" onclick="startMe()" value="Start">
@@ -51,12 +62,14 @@
                     <img id="start-pic" src="assets/images/music-glasses.jpg">
                 </div>
 
+                <!-- timer on question 'page' -->
                 <div id="timerDiv" style="display: none;">
                     <br>
                     <p>Seconds Left: <span id="timer">60</span></p>
                 </div>
                 <br>
 
+                <!-- questions 1 thru 8 for question 'page' -->
                 <div id="Q1" style="display: none;">
                     <p class="question">What major key has 2 flats?</p>
                     <form class="answer">
@@ -216,21 +229,17 @@
                         <br>
                 </div>
 
+                <!-- done button for question 'page' -->
                 <div id="calc" style="display: none;">
                     <input type="button" class="btn" onclick="calcScore()" value="Done">
                     <br><br>
                 </div>
-
             </div>
 
-
-        <div class="row">
-
-            <div class="col-3"></div>
-
-        </div>
+            <!-- right column -->
+            <div class="col-sm-3"></div>
     </div>
-
+    <!-- run script after html is complete -->
     <script type="text/javascript" src="assets/javascript/app.js"></script>
 
 </body>

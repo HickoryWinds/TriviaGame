@@ -1,48 +1,46 @@
+// var cnt = 0;
 //-----------------------
 // set global variables
 //-----------------------
 
-// playGame is set to true when game initialzed; set to false
-// set to false to keep player from adding points until game starts
-var playGame = false;
-
-// test function for button
-function startFunction() {
-    window.location.href = "game_page.html";
-    // console.log("Lookee here!");
-}
-
-// define here so calcScore work when time runs out and with button
+// define secCounter and secStart for masterTimer here so calcScore works when time runs out and with button
+// secStart sets number of seconds for masterTimer; secCounter is one second counter
 var secCounter;
-// 30 second timer
-var cnt = 0;
 var secStart = 0;
 function masterTimer( ){
+  // 60 second timer
   secStart = 60;
   secCounter = setInterval(timer , 1000);
+  // one second timer
   function timer() {
     secStart -= 1;
     if (secStart <= 0) {
+      //stops counter when secStart <= 0
       clearInterval(secCounter);
-      // secStart = 0;
+      // call calcScore when 60 sec timer runs out
       calcScore();
-      // return;
     }
+    // display timer
     document.getElementById("timer").innerHTML = (secStart);
   }
 }
 
+// set number_questions to number of question asked
 var number_questions = 8;
+// array to store correct and incorrect answers to questions
 var answerSummary = [];
-console.log("answerSummary @ start = " + answerSummary)
+// variables to display player responses
 var numberCorrect = 0;
 var numberInCorrect = 0;
 var numberNoAnswer = 0;
 
+// functions answer'Number' get correct and incorrect responses for each question
+// and add them to the answerSummary
 function answerOne() {
   var question1 = document.forms[0];
   var txt = "";
   var i;
+  // check each radio for the question for responses
   for (i = 0; i < question1.length; i++) {
     if (question1[i].checked) {
       txt = txt + question1[i].value + " ";
@@ -50,7 +48,6 @@ function answerOne() {
       console.log(" answerSummary add 1 = " + answerSummary);
     }
   }
-  // document.getElementById("pick-1").value = "Your answer to question one is " + txt;
 }
 
 function answerTwo() {
@@ -64,7 +61,6 @@ function answerTwo() {
       console.log(" answerSummary add 2 = " + answerSummary);
     }
   }
-  // document.getElementById("pick-2").value = "Your answer to question two is " + txt;
 }
 
 function answerThree() {
@@ -78,7 +74,6 @@ function answerThree() {
       console.log(" answerSummary add 3 = " + answerSummary);
     }
   }
-  // document.getElementById("pick-3").value = "Your answer to question three is " + txt;
 }
 function answerFour() {
   var question4 = document.forms[3];
@@ -91,7 +86,6 @@ function answerFour() {
       console.log(" answerSummary add 4 = " + answerSummary);
     }
   }
-  // document.getElementById("pick-4").value = "Your answer to question three is " + txt;
 }
 function answerFive() {
   var question5 = document.forms[4];
@@ -104,7 +98,6 @@ function answerFive() {
       console.log(" answerSummary add 5 = " + answerSummary);
     }
   }
-  // document.getElementById("pick-5").value = "Your answer to question three is " + txt;
 }
 function answerSix() {
   var question6 = document.forms[5];
@@ -117,7 +110,6 @@ function answerSix() {
       console.log(" answerSummary add 6 = " + answerSummary);
     }
   }
-  // document.getElementById("pick-6").value = "Your answer to question three is " + txt;
 }
 function answerSeven() {
   var question7 = document.forms[6];
@@ -130,7 +122,6 @@ function answerSeven() {
       console.log(" answerSummary add 7 = " + answerSummary);
     }
   }
-  // document.getElementById("pick-7").value = "Your answer to question three is " + txt;
 }
 function answerEight() {
   var question8 = document.forms[7];
@@ -143,17 +134,20 @@ function answerEight() {
       console.log(" answerSummary add 8 = " + answerSummary);
     }
   }
-  // document.getElementById("pick-8").value = "Your answer to question three is " + txt;
 }
 
+// calcScore can be called by done button or when 60 second timer runs out
+// calculates number of correct, incorrect, and not answered questions
 function calcScore() {
+  // stop 60 second timer
   secStart = 0;
+  // set counting variables to 0
   numberCorrect = 0;
   numberInCorrect = 0;
   numberNoAnswer = 0;
+  // stop one second counter
   clearInterval(secCounter);
-  // document.getElementById("timer").innerHTML = ("0 seconds left");
-  console.log("end " + secStart);
+  // call functions for each set of radio buttons
   answerOne();
   answerTwo();
   answerThree();
@@ -162,34 +156,30 @@ function calcScore() {
   answerSix();
   answerSeven();
   answerEight();
+  // condition if no questions are answered
   if (answerSummary.length === 0) {
     answerSummary = ["a"];
   }
+  // check answerSummary for number of correct and incorrect members
   for (var l = 0; l < answerSummary.length; l++) {
-    console.log("l = " + l + " answerSummary{l} = " + answerSummary[l]);
     if (answerSummary[l] === "correct ") {
       numberCorrect++;
     }
     if (answerSummary[l] === "incorrect ") {
       numberInCorrect += 1;
     }
+    // calculate difference between total questions and sum of correct/incorrect answers
     numberNoAnswer = (number_questions) - (numberCorrect + numberInCorrect);
   }
-  console.log(numberCorrect);
+  // display values for correct, incorrect, and not answered question
   document.getElementById("right").innerHTML = numberCorrect;
-  console.log(numberInCorrect);
   document.getElementById("wrong").innerHTML = numberInCorrect;
-  console.log(numberNoAnswer);
   document.getElementById("none").innerHTML = numberNoAnswer;
- 
+ // hide question 'page'
   hideMe();
-  // window.location.href = "score_page.html";
-    // document.getElementById("rightScore").innerHTML = numberCorrect;
-    // document.getElementById("wrongScore").innerHTML =  numberInCorrect;
-    // document.getElementById("noneScore").innerHTML =  numberNoAnswer;
-  
   }
 
+// startMe changes divs displayed when going from 'first' to 'question' page
 function startMe() {
   document.getElementById("start").style.display = "none";
   document.getElementById("Q1").style.display = "block";
@@ -203,10 +193,9 @@ function startMe() {
   document.getElementById("timerDiv").style.display = "block";
   document.getElementById("calc").style.display = "block";
   document.getElementById("start-image").style.display = "none";
-  // document.getElementById("end-image").style.visibility = "visible";
   masterTimer();
 }
-
+// hideMe changes divs displayed when going from 'question' to 'last' pages
 function hideMe() {
   document.getElementById("heresMagic").style.display = "block";
   document.getElementById("Q1").style.display = "none";
@@ -219,6 +208,5 @@ function hideMe() {
   document.getElementById("Q8").style.display = "none";
   document.getElementById("timerDiv").style.display = "none";
   document.getElementById("calc").style.display = "none";
-  // document.getElementById("start-image").style.visibility = "hidden";
   document.getElementById("end-image").style.display = "block";
 }
