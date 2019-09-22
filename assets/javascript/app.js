@@ -37,101 +37,18 @@ var numberNoAnswer = 0;
 // functions answer'Number' get correct and incorrect responses for each question
 // and add them to the answerSummary
 function answerOne() {
-  var question1 = document.forms[0];
-  var txt = "";
-  var i;
-  // check each radio for the question for responses
-  for (i = 0; i < question1.length; i++) {
-    if (question1[i].checked) {
-      txt = txt + question1[i].value + " ";
-      answerSummary.push(txt);
-      console.log(" answerSummary add 1 = " + answerSummary);
-    }
-  }
-}
-
-function answerTwo() {
-  var question2 = document.forms[1];
-  var txt = "";
-  var j;
-  for (j = 0; j < question2.length; j++) {
-    if (question2[j].checked) {
-      txt = txt + question2[j].value + " ";
-      answerSummary.push(txt);
-      console.log(" answerSummary add 2 = " + answerSummary);
-    }
-  }
-}
-
-function answerThree() {
-  var question3 = document.forms[2];
-  var txt = "";
-  var k;
-  for (k = 0; k < question3.length; k++) {
-    if (question3[k].checked) {
-      txt = txt + question3[k].value + " ";
-      answerSummary.push(txt);
-      console.log(" answerSummary add 3 = " + answerSummary);
-    }
-  }
-}
-function answerFour() {
-  var question4 = document.forms[3];
-  var txt = "";
-  var k;
-  for (k = 0; k < question4.length; k++) {
-    if (question4[k].checked) {
-      txt = txt + question4[k].value + " ";
-      answerSummary.push(txt);
-      console.log(" answerSummary add 4 = " + answerSummary);
-    }
-  }
-}
-function answerFive() {
-  var question5 = document.forms[4];
-  var txt = "";
-  var k;
-  for (k = 0; k < question5.length; k++) {
-    if (question5[k].checked) {
-      txt = txt + question5[k].value + " ";
-      answerSummary.push(txt);
-      console.log(" answerSummary add 5 = " + answerSummary);
-    }
-  }
-}
-function answerSix() {
-  var question6 = document.forms[5];
-  var txt = "";
-  var k;
-  for (k = 0; k < question6.length; k++) {
-    if (question6[k].checked) {
-      txt = txt + question6[k].value + " ";
-      answerSummary.push(txt);
-      console.log(" answerSummary add 6 = " + answerSummary);
-    }
-  }
-}
-function answerSeven() {
-  var question7 = document.forms[6];
-  var txt = "";
-  var k;
-  for (k = 0; k < question7.length; k++) {
-    if (question7[k].checked) {
-      txt = txt + question7[k].value + " ";
-      answerSummary.push(txt);
-      console.log(" answerSummary add 7 = " + answerSummary);
-    }
-  }
-}
-function answerEight() {
-  var question8 = document.forms[7];
-  var txt = "";
-  var k;
-  for (k = 0; k < question8.length; k++) {
-    if (question8[k].checked) {
-      txt = txt + question8[k].value + " ";
-      answerSummary.push(txt);
-      console.log(" answerSummary add 8 = " + answerSummary);
+  // loop through all the questions
+  for (var j = 0; j < 8; j++) {
+    var question = document.forms[j];
+    var txt = "";
+    var i;
+    // check each radio button of the question for responses
+    for (i = 0; i < question.length; i++) {
+      if (question[i].checked) {
+        txt = txt + question[i].value + " ";
+        answerSummary.push(txt);
+        console.log(" answerSummary " + j + " " + answerSummary);
+      }
     }
   }
 }
@@ -147,15 +64,8 @@ function calcScore() {
   numberNoAnswer = 0;
   // stop one second counter
   clearInterval(secCounter);
-  // call functions for each set of radio buttons
+  // call function to calculate answer types for each set of radio buttons
   answerOne();
-  answerTwo();
-  answerThree();
-  answerFour();
-  answerFive();
-  answerSix();
-  answerSeven();
-  answerEight();
   // condition if no questions are answered
   if (answerSummary.length === 0) {
     answerSummary = ["a"];
@@ -193,7 +103,11 @@ function startMe() {
   document.getElementById("timerDiv").style.display = "block";
   document.getElementById("calc").style.display = "block";
   document.getElementById("start-image").style.display = "none";
+  document.getElementById("end-image").style.display = "none";
+  document.getElementById("heresMagic").style.display = "none";
+  document.getElementById("replay").style.display = "none";
   masterTimer();
+  resetForms();
 }
 // hideMe changes divs displayed when going from 'question' to 'last' pages
 function hideMe() {
@@ -209,4 +123,18 @@ function hideMe() {
   document.getElementById("timerDiv").style.display = "none";
   document.getElementById("calc").style.display = "none";
   document.getElementById("end-image").style.display = "block";
+  document.getElementById("replay").style.display = "block";
+}
+
+// resets radio buttons and array to store answer results
+function resetForms() {
+  document.getElementById("form0").reset();
+  document.getElementById("form1").reset();
+  document.getElementById("form2").reset();
+  document.getElementById("form3").reset();
+  document.getElementById("form4").reset();
+  document.getElementById("form5").reset();
+  document.getElementById("form6").reset();
+  document.getElementById("form7").reset();
+  answerSummary = [];
 }
